@@ -1,0 +1,23 @@
+diff -urN pekwm-0.1.3/docs/Makefile.in pekwm.patch/docs/Makefile.in
+--- pekwm-0.1.3/docs/Makefile.in	2003-06-05 21:12:14.000000000 +0200
++++ pekwm.patch/docs/Makefile.in	2004-08-08 16:50:36.662367376 +0200
+@@ -1,7 +1,7 @@
+ # Makefile for pekwm
+ # Copyright (C) 2002 Claes Nästen <pekdon@gmx.net>
+ 
+-prefix = @prefix@
++MANDIR = @mandir@
+ DATADIR = @datadir@/@PACKAGE@
+ DATA_MODE = 644
+ INSTALL = @INSTALL@
+@@ -12,8 +12,8 @@
+ 	sed 's:<PREFIX>:$(DATADIR):' pekwm.1.in > pekwm.1
+ 
+ install: all
+-	mkdir -p $(DESTDIR)$(prefix)/man/man1
+-	$(INSTALL) -m $(DATA_MODE) pekwm.1 $(DESTDIR)$(prefix)/man/man1
++	mkdir -p $(DESTDIR)${MANDIR}/man1
++	$(INSTALL) -m $(DATA_MODE) pekwm.1 $(DESTDIR)${MANDIR}/man1
+ 
+ clean:
+ 	rm -f pekwm.1
