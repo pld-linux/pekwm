@@ -15,15 +15,14 @@ Source1:	%{name}.desktop
 Source2:	%{name}-xsession.desktop
 Patch0:		%{name}-fixmandir.patch
 URL:		http://pekwm.org/
-Buildrequires:	XFree86-devel
-Buildrequires:	XFree86-libs
+BuildRequires:	XFree86-devel
 BuildRequires:	libstdc++-devel
 Requires:	xinitrc-ng
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define  _sysconfdir	/etc/X11
-%define	 _deskdir	/usr/share/wm-properties
-%define	 _xdeskdir	%{_datadir}/xsession
+%define		_sysconfdir	/etc/X11
+%define		_deskdir	/usr/share/wm-properties
+%define		_xdeskdir	%{_datadir}/xsession
 
 %description
 pekwm is a small, fast, functional and flexible window manager.
@@ -63,12 +62,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README README.aewm++ TODO docs/pekwmdocs.txt docs/pekwmdocs.html
-%dir %{_sysconfdir}/%{name}
-%dir %{_datadir}/%{name}/scripts
 %attr(755,root,root) %{_bindir}/*
+%dir %{_sysconfdir}/%{name}
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/%{name}/*
-%{_datadir}/%{name}/themes/
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/themes
+%dir %{_datadir}/%{name}/scripts
 %attr(755,root,root) %{_datadir}/%{name}/scripts/*
 %{_deskdir}/%{name}.desktop
 %{_xdeskdir}/%{name}.desktop
-%{_mandir}/man1/%{name}.1.gz
+%{_mandir}/man1/%{name}.1*
