@@ -4,6 +4,6 @@ Type=XSession
 Exec=pekwm
 TryExec=pekwm
 Name=Pekwm
-Comment=A smal and fast window manager 
-Comment[pl]=Mały i szybki menadżer okien
-
+Comment=A small and fast window manager 
+Comment[pl]=Mały i szybki zarządca okien
+# vi: encoding=utf-8
