@@ -3,7 +3,7 @@
 %bcond_with	xinerama	# build with xinerama extension
 #
 Summary:	pekwm - based on the aewm++ window manager
-Summary(pl):	pekwm - bazuj±cy na aewm++ zarz±dc± okien
+Summary(pl):	pekwm - zarz±dca okien oparty na aewm++
 Name:		pekwm
 Version:	0.1.3
 Release:	1
