@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=XSession
+Exec=pekwm
+TryExec=pekwm
+Name=Pekwm
+Comment=A smal and fast window manager 
+Comment[pl]=Mały i szybki menadżer okien
+
