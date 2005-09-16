@@ -5,15 +5,17 @@
 Summary:	pekwm - based on the aewm++ window manager
 Summary(pl):	pekwm - zarz±dca okien oparty na aewm++
 Name:		pekwm
-Version:	0.1.3
-Release:	1
+Version:	0.1.4
+%define	_pre	pre2
+#define _pre	%nil
+Release:	0.%{_pre}.1
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://pekwm.org/files/source/%{name}-%{version}.tar.bz2
-# Source0-md5:	c0bd31ae08fa0067f6a6584270403675
+Source0:	http://pekwm.org/files/%{name}-%{version}%{_pre}.tar.bz2
+# Source0-md5:	a5aae71550cb8ace2bc4db423d67532a
 Source1:	%{name}.desktop
 Source2:	%{name}-xsession.desktop
-Patch0:		%{name}-fixmandir.patch
+#Patch0:		%{name}-fixmandir.patch
 URL:		http://pekwm.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	libstdc++-devel
@@ -31,8 +33,8 @@ pekwm is a small, fast, functional and flexible window manager.
 pekwm jest ma³ym, szybkim, funkcjonalnym i elastycznym zarz±dc± okien.
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -q -n %{name}-%{version}%{_pre}
+#patch0 -p1
 
 %build
 %configure \
@@ -61,7 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README README.aewm++ TODO docs/pekwmdocs.txt docs/pekwmdocs.html
+%doc AUTHORS ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %dir %{_sysconfdir}/%{name}
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/%{name}/*
@@ -71,4 +73,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_datadir}/%{name}/scripts/*
 %{_deskdir}/%{name}.desktop
 %{_xdeskdir}/%{name}.desktop
-%{_mandir}/man1/%{name}.1*
+#{_mandir}/man1/%{name}.1*
