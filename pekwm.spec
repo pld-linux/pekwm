@@ -1,5 +1,5 @@
 #
-# Conditional build 
+# Conditional build
 %bcond_with	xinerama	# build with xinerama extension
 #
 Summary:	pekwm - based on the aewm++ window manager
@@ -66,7 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %dir %{_sysconfdir}/%{name}
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/%{name}/*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/themes
 %dir %{_datadir}/%{name}/scripts
