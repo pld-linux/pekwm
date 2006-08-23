@@ -19,7 +19,6 @@ Source2:	%{name}-xsession.desktop
 URL:		http://pekwm.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	libstdc++-devel
-Requires:	xinitrc-ng
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
