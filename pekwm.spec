@@ -3,7 +3,7 @@
 %bcond_with	xinerama	# build with xinerama extension
 #
 Summary:	pekwm - based on the aewm++ window manager
-Summary(pl):	pekwm - zarz±dca okien oparty na aewm++
+Summary(pl.UTF-8):   pekwm - zarzÄ…dca okien oparty na aewm++
 Name:		pekwm
 Version:	0.1.4
 %define	_pre	pre2
@@ -28,8 +28,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 pekwm is a small, fast, functional and flexible window manager.
 
-%description -l pl
-pekwm jest ma³ym, szybkim, funkcjonalnym i elastycznym zarz±dc± okien.
+%description -l pl.UTF-8
+pekwm jest maÅ‚ym, szybkim, funkcjonalnym i elastycznym zarzÄ…dcÄ… okien.
 
 %prep
 %setup -q -n %{name}-%{version}%{_pre}
