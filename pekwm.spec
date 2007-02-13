@@ -3,7 +3,7 @@
 %bcond_with	xinerama	# build with xinerama extension
 #
 Summary:	pekwm - based on the aewm++ window manager
-Summary(pl.UTF-8):   pekwm - zarządca okien oparty na aewm++
+Summary(pl.UTF-8):	pekwm - zarządca okien oparty na aewm++
 Name:		pekwm
 Version:	0.1.4
 %define	_pre	pre2
