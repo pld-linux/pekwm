@@ -6,11 +6,10 @@ Summary:	pekwm - based on the aewm++ window manager
 Summary(pl.UTF-8):	pekwm - zarządca okien oparty na aewm++
 Name:		pekwm
 Version:	0.1.6
-#define	_pre	pre2
 Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://projects.pekdon.net/files/download/15
+Source0:	http://projects.pekdon.net/files/download/15?%{name}-%{version}.tar.bz2
 # Source0-md5:	551358cbe15cfe7be3a7f614c49c1d00
 Source1:	%{name}.desktop
 Source2:	%{name}-xsession.desktop
