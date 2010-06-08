@@ -1,21 +1,28 @@
-#
-# Conditional build
-%bcond_with	xinerama	# build with xinerama extension
-#
 Summary:	pekwm - based on the aewm++ window manager
 Summary(pl.UTF-8):	pekwm - zarządca okien oparty na aewm++
 Name:		pekwm
-Version:	0.1.6
-Release:	2
+Version:	0.1.12
+Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://projects.pekdon.net/files/download/15?%{name}-%{version}.tar.bz2
-# Source0-md5:	551358cbe15cfe7be3a7f614c49c1d00
+Source0:	http://pekwm.org/projects/pekwm/files/%{name}-%{version}.tar.gz
+# Source0-md5:	1f7f9ed32cc03f565a3ad30fd6045c1f
 Source1:	%{name}.desktop
 Source2:	%{name}-xsession.desktop
 URL:		http://pekwm.org/
-BuildRequires:	XFree86-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libjpeg-devel
+BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel
+BuildRequires:	xorg-lib-libICE-devel
+BuildRequires:	xorg-lib-libSM-devel
+BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xorg-lib-libXft-devel
+BuildRequires:	xorg-lib-libXinerama-devel
+BuildRequires:	xorg-lib-libXpm-devel
+BuildRequires:	xorg-lib-libXrandr-devel
 Conflicts:	filesystem < 3.0-20
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,14 +40,20 @@ pekwm jest małym, szybkim, funkcjonalnym i elastycznym zarządcą okien.
 %setup -q
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure \
-	--enable-shape \
 	--disable-debug \
-	--enable-menus \
-	--enable-keygrabber \
 	--enable-harbour \
-	%{?with_xinerama: --enable-xinerama} \
-	--disable-pcre
+	--enable-image-jpeg \
+	--enable-image-png \
+	--enable-image-xpm \
+	--enable-menus \
+	--enable-shape \
+	--enable-xft \
+	--enable-xinerama \
+	--enable-xrandr
 
 %{__make}
 
