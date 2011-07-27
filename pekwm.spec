@@ -1,8 +1,12 @@
+#
+# Conditional build:
+%bcond_with	gnome		# build with support for GNOME2 wm-properties
+#
 Summary:	pekwm - based on the aewm++ window manager
 Summary(pl.UTF-8):	pekwm - zarządca okien oparty na aewm++
 Name:		pekwm
 Version:	0.1.12
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://pekwm.org/projects/pekwm/files/%{name}-%{version}.tar.gz
@@ -65,7 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT{%{_deskdir},%{_xdeskdir}}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_deskdir}
+%{?with_gnome2:install %{SOURCE1} $RPM_BUILD_ROOT%{_deskdir}}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_xdeskdir}/%{name}.desktop
 
 %clean
@@ -81,6 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/themes
 %dir %{_datadir}/%{name}/scripts
 %attr(755,root,root) %{_datadir}/%{name}/scripts/*
-%{_deskdir}/%{name}.desktop
+%{?with_gnome2:%{_deskdir}/%{name}.desktop}
 %{_xdeskdir}/%{name}.desktop
 %{_mandir}/man1/%{name}.1*
