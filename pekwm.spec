@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with	gnome		# build with support for GNOME2 wm-properties
+%bcond_with	gnome2		# build with support for GNOME2 wm-properties
 #
 Summary:	pekwm - based on the aewm++ window manager
 Summary(pl.UTF-8):	pekwm - zarządca okien oparty na aewm++
